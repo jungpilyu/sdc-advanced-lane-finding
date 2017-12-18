@@ -104,7 +104,7 @@ The files are submitted in the directory containing this write-up.
 The files are
 * `advanced-lane-finding.ipynb` : a jupyter notebook which contains all the required codes.
 * `advanced-lane-finding.html` : a html file exported by the jupyter notebook containing all the execution results.
-* `./writeup_imagess/*` : all the images and video showing the result
+* `./writeup_images/*` : all the images and video showing the result
 * `writeup_advanced_lane.md` : this write-up file
 
 ### Camera Calibration
@@ -126,6 +126,7 @@ I then used the output `object_points` and `image_points` to compute the camera 
 #### 1. Provide an example of a distortion-corrected image.
 
 I apply `cv2.undistort()` with camera calibration parameters obtained in the previous section to all the test images which are shown in the following.
+
 ![alt text][undis1]
 ![alt text][undis2]
 ![alt text][undis3]
@@ -171,14 +172,14 @@ This resulted in the following source and destination points:
 
 I verified that my perspective transform was working as expected by drawing the `before` and `after` points onto a test image and its warped counterpart to verify that the lines appear parallel in the warped image.
 
-![alt text][birds1]
-![alt text][birds2]
-![alt text][birds3]
-![alt text][birds4]
-![alt text][birds5]
-![alt text][birds6]
-![alt text][birds7]
-![alt text][birds8]
+![alt text][bird1]
+![alt text][bird2]
+![alt text][bird3]
+![alt text][bird4]
+![alt text][bird5]
+![alt text][bird6]
+![alt text][bird7]
+![alt text][bird8]
 
 #### 4. Describe how (and identify where in your code) you identified lane-line pixels and fit their positions with a polynomial?
 
@@ -208,7 +209,7 @@ Then I fitted my lane lines with a 2nd order polynomial. This is a fairly exquis
 
 I did this in 9th cell in `advanced-lane-line.ipynb`. The curvature-measuring formula is explained in [Interactive Mathematics](https://www.intmath.com/applications-differentiation/8-radius-curvature.php) and this is
 $$([1+((dy)/(dx))^2]^(3//2))/(|(d^2y)/(dx^2)|)$$
-at any point $$$x$$$ for the curve $$$y = f(x)$$$
+at any point <em>x</em> for the curve <span class="intmath"><i>y</i> = <i>f</i>(<i>x</i>)</span>
 The measured left and right line curvatures are shown in the following figures as well as the offset in meters from the center point.
 
 ![alt text][lane1]
